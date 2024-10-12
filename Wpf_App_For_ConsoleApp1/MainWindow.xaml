@@ -20,7 +20,9 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
         <TextBox Grid.Column="0" Grid.Row="0" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"/>
         <TextBox Grid.Column="0" Grid.Row="1" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"/>
@@ -32,5 +34,15 @@
         <Label Content="Stein" HorizontalAlignment="Left" Margin="0,10,0,0" Grid.Row="7" VerticalAlignment="Top"/>
         <Label Name="Euclid_Res" Content="" HorizontalAlignment="Left" Margin="56,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="80"/>
         <Label Name="Stein_Res" Content="" HorizontalAlignment="Left" Margin="56,0,0,0" Grid.Row="7" VerticalAlignment="Center" Width="80"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="140"/>
+        <Button Grid.Column="1" Grid.Row="1" Content="Calculate GCD" HorizontalAlignment="Center" Margin="0,12,0,0" VerticalAlignment="Top"/>
+        <Label Grid.Column="1" Content="Euclid" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center"/>
+        <Label Name="Euclid_Res2" Grid.Column="1" Content="" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center" Width="120" Margin="40,0,0,0"/>
+        <Label Grid.Column="1" Content="Stein" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Center"/>
+        <Label Name="Stein_Res2" Grid.Column="1" Content="" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Center" Width="120" Margin="40,0,0,0"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Margin="0,13,0,0"/>
+        <Button Grid.Column="2" Content="Calculate Prime" HorizontalAlignment="Center" Margin="0,7,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100"/>
+        <Label Content="Result" HorizontalAlignment="Left" Margin="159,9,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Label Name="PrimeLabel" Grid.Column="2" Content="" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Width="79" Margin="71,9,0,0"/>
     </Grid>
 </Window>

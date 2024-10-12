@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Wpf_App_For_ConsoleApp1
 {
-    internal class Matrix
+    class Matrix
     {
         public static double[,] Multiply(double[,] x, double[,] y)
         {
