@@ -1,4 +1,7 @@
-﻿/// <summary>
+﻿using System.Text.RegularExpressions;
+using System;
+using System.Text;
+/// <summary>
 /// Class for GCD
 /// </summary>
 public class GCDAlgorithms
@@ -22,7 +25,7 @@ public class GCDAlgorithms
     /// <param name="a">first number</param>
     /// <param name="b">second number</param>
     /// <param name="c">third number</param>
-    /// <returns>return GCD for a and b</returns>
+    /// <returns>return GCD for a,b,c</returns>
     public static int FindGCDEuclid(int a, int b, int c)
     {
         return FindGCDEuclid(FindGCDEuclid(a, b), c);
@@ -34,7 +37,7 @@ public class GCDAlgorithms
     /// <param name="b">second number</param>
     /// <param name="c">third number</param>
     /// <param name="d">fourth number</param>
-    /// <returns>return GCD for a and b</returns>
+    /// <returns>return GCD for a,b,c,d</returns>
     public static int FindGCDEuclid(int a, int b, int c, int d)
     {
         return FindGCDEuclid(FindGCDEuclid(a, b), c, d);
@@ -47,10 +50,25 @@ public class GCDAlgorithms
     /// <param name="c">third number</param>
     /// <param name="d">fourth number</param>
     /// <param name="f">fifth number</param>
-    /// <returns>return GCD for a and b</returns>
+    /// <returns>return GCD for a,b,c,d,f</returns>
     public static int FindGCDEuclid(int a, int b, int c, int d, int f)
     {
         return FindGCDEuclid(a,b,c,FindGCDEuclid(d,f));
+    }
+    /// <summary>
+    /// The function for gcd
+    /// </summary>
+    /// <param name="a">Some numbers</param>
+    /// <returns>return GCD for numbers</returns>
+    public static int FindGCDEuclid(params int[] a)
+    {
+        if (a.Length == 0) return 0;
+        int res = a[0];
+        for (int i = 1; i < a.Length; i++)
+        {
+            res = FindGCDEuclid(res, a[i]);
+        }
+        return res;
     }
     /// <summary>
     /// The Stein function for GCD
@@ -103,4 +121,55 @@ public class GCDAlgorithms
     {
         return FindGCDStein(FindGCDStein(a, b), c, d, f);
     }
+    /// <summary>
+    /// The function for gcd
+    /// </summary>
+    /// <param name="a">Some numbers</param>
+    /// <returns>return GCD for numbers</returns>
+    public static int FindGCDStein(params int[] a)
+    {
+        if (a.Length == 0) return 0;
+        int res = a[0];
+        for (int i = 1; i < a.Length; i++)
+        {
+            res = FindGCDEuclid(res, a[i]);
+        }
+        return res;
+    }
+    /// <summary>
+    /// Finding the largest simple number lower then number a
+    /// </summary>
+    /// <param name="a">some number</param>
+    /// <returns>simple number lower then number a</returns>
+    public static string FindLargestSimple(int a)
+    {
+        while (a > 0)
+        {
+            a-=1;
+            if (IsPrime(a)) break;
+        }
+        StringBuilder res = new StringBuilder();
+        int k = 0;
+        while (a > 0)
+        {
+            if ((a&1)==1) res.Append($"2>>{k}+");
+            a>>= 1;
+            k++;
+        }
+        return res.Remove(res.Length-1,1).ToString();
+    }
+    /// <summary>
+    /// Is prime number a?
+    /// </summary>
+    /// <param name="a">some number</param>
+    /// <returns>Is this number simple(true) or not (false)</returns>
+    public static bool IsPrime(int a)
+    {
+        for (int i = 2; i < (int)Math.Sqrt(a); i++)
+        {
+            if (a % i == 0) return false;
+        }
+        return true;
+    }
+
 }

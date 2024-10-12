@@ -7,6 +7,30 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <!-- Задание строк и столбцов в процентных пропорциях -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="4*" />
+        </Grid.ColumnDefinitions>
+        <TextBox Grid.Column="0" Grid.Row="0" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+        <TextBox Grid.Column="0" Grid.Row="1" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+        <TextBox Grid.Column="0" Grid.Row="2" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+        <TextBox Grid.Column="0" Grid.Row="3" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+        <TextBox Grid.Column="0" Grid.Row="4" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+        <Button Grid.Column="0" Grid.Row="5" Content="Calculate GCD" HorizontalAlignment="Left" Margin="16,0,0,0" VerticalAlignment="Center" />
+        <Label Content="Euclid" HorizontalAlignment="Left" Margin="0,10,0,0" Grid.Row="6" VerticalAlignment="Top"/>
+        <Label Content="Stein" HorizontalAlignment="Left" Margin="0,10,0,0" Grid.Row="7" VerticalAlignment="Top"/>
+        <Label Name="Euclid_Res" Content="" HorizontalAlignment="Left" Margin="56,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="80"/>
+        <Label Name="Stein_Res" Content="" HorizontalAlignment="Left" Margin="56,0,0,0" Grid.Row="7" VerticalAlignment="Center" Width="80"/>
     </Grid>
 </Window>
