@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using static GCDAlgorithms;
+using Wpf_App_For_ConsoleApp1;
 
 namespace Wpf_App_For_ConsoleApp1
 {
@@ -64,6 +65,12 @@ namespace Wpf_App_For_ConsoleApp1
         private void Button_Click_Find_Prime(object sender, RoutedEventArgs e)
         {
             PrimeLabel.Content = FindLargestSimple(ParseToInt(TxtPrimeNumber.Text));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Wpf_App_For_ConsoleApp1.Window1 secondWin = new Wpf_App_For_ConsoleApp1.Window1();
+            secondWin.Show();
         }
     }
 }

@@ -43,5 +43,6 @@
         <Button Click="Button_Click_Find_Prime" Grid.Column="2" Content="Calculate Prime" HorizontalAlignment="Center" Margin="0,7,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100"/>
         <Label Content="Result" HorizontalAlignment="Left" Margin="159,9,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1"/>
         <Label Name="PrimeLabel" Grid.Column="2" Content="" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Width="399" Margin="71,9,0,0" Grid.ColumnSpan="2"/>
+        <Button Click="Button_Click" Grid.Column="3" Content="Matrix" HorizontalAlignment="Left" Margin="180,10,0,0" Grid.Row="7" VerticalAlignment="Top" RenderTransformOrigin="1.388,-0.037"/>
     </Grid>
 </Window>

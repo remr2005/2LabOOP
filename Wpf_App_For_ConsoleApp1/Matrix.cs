@@ -10,15 +10,28 @@ namespace Wpf_App_For_ConsoleApp1
     {
         public static double[,] Multiply(double[,] x, double[,] y)
         {
-            double[,] res = new double[x.GetLength(0),y.GetLength(1)];
-            for (int i = 0; i < x.GetLength(0); i++)
+            // Проверяем, что количество столбцов первой матрицы равно количеству строк второй
+            if (x.GetLength(1) != y.GetLength(0))
             {
-                for (int j = 0; j < y.GetLength(1); j++)
+                throw new ArgumentException("Matrices cannot be multiplied: invalid dimensions.");
+            }
+
+            // Инициализация результатирующей матрицы с размерами (строки x) x (столбцы y)
+            double[,] res = new double[x.GetLength(0), y.GetLength(1)];
+
+            // Умножаем матрицы
+            for (int i = 0; i < x.GetLength(0); i++) // строки матрицы x
+            {
+                for (int j = 0; j < y.GetLength(1); j++) // столбцы матрицы y
                 {
-                    res[i,j] = x[i,j] * y[j,i];
+                    for (int k = 0; k < x.GetLength(1); k++) // столбцы матрицы x и строки матрицы y
+                    {
+                        res[i, j] += x[i, k] * y[k, j]; // Правильное вычисление произведения
+                    }
                 }
             }
+
             return res;
-        } 
+        }
     }
 }
