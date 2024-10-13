@@ -14,6 +14,8 @@ public class GCDAlgorithms
     /// <returns>return GCD for a and b</returns>
     public static int FindGCDEuclid(int a, int b)
     {
+        a = Math.Abs(a);
+        b = Math.Abs(b);
         if (a == 0) return b;
         if (b == 0) return a;
         if (a>b) return FindGCDEuclid(a-b*(a/b),b);
@@ -78,6 +80,8 @@ public class GCDAlgorithms
     /// <returns>Return GCD</returns>
     public static int FindGCDStein(int a, int b)
     {
+        a = Math.Abs(a);
+        b = Math.Abs(b);   
         if (a == 0 || b == 0) return a | b;
         if ( a%2 + b%2 == 0 ) return FindGCDStein(a>>1,b>>1)<<1;
         if (a%2==0) return FindGCDStein(a>>1,b);
@@ -149,14 +153,15 @@ public class GCDAlgorithms
             if (IsPrime(a)) break;
         }
         StringBuilder res = new StringBuilder();
-        int k = 0;
+        int k = -1;
         while (a > 0)
         {
-            if ((a&1)==1) res.Append($"2>>{k}+");
+            if ((a & 1) == 1 && k==-1) res.Append("2>>1 + ");
+            else if ((a&1)==1) res.Append($"2<<{k} + ");
             a>>= 1;
-            k++;
+            k+=1;
         }
-        return res.Remove(res.Length-1,1).ToString();
+        return res.Remove(res.Length-3,3).ToString();
     }
     /// <summary>
     /// Is prime number a?
@@ -165,7 +170,7 @@ public class GCDAlgorithms
     /// <returns>Is this number simple(true) or not (false)</returns>
     public static bool IsPrime(int a)
     {
-        for (int i = 2; i < (int)Math.Sqrt(a); i++)
+        for (int i = 2; i < (int)Math.Sqrt(a)+1; i++)
         {
             if (a % i == 0) return false;
         }
