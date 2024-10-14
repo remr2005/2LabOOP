@@ -22,6 +22,9 @@ namespace Wpf_App_For_ConsoleApp1
     /// </summary>
     public partial class Window1 : Window
     {
+        /// <summary>
+        /// Инициализация
+        /// </summary>
         public Window1()
         {
             InitializeComponent();
@@ -29,7 +32,11 @@ namespace Wpf_App_For_ConsoleApp1
             InitializeGrid(grid2, 10, 10);
             InitializeGrid(grid3, 10, 10);
         }
-
+        /// <summary>
+        /// Код для изменения размерности матриц
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             try
@@ -45,7 +52,11 @@ namespace Wpf_App_For_ConsoleApp1
             catch { return; }
             
         }
-
+        /// <summary>
+        /// логика для вычисления произведения
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             try

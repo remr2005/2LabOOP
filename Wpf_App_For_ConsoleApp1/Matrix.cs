@@ -8,6 +8,13 @@ namespace Wpf_App_For_ConsoleApp1
 {
     class Matrix
     {
+        /// <summary>
+        /// Функция для перемножения матриц
+        /// </summary>
+        /// <param name="x">Первая матрица</param>
+        /// <param name="y">Вторая матрица</param>
+        /// <returns>Результат</returns>
+        /// <exception cref="ArgumentException"></exception>
         public static double[,] Multiply(double[,] x, double[,] y)
         {
             // Проверяем, что количество столбцов первой матрицы равно количеству строк второй
