@@ -147,19 +147,23 @@ public class GCDAlgorithms
     /// <returns>simple number lower then number a</returns>
     public static string FindLargestSimple(int a)
     {
+        // Находим наибольшее простое число меньшее заданного
         while (a > 0)
         {
-            a-=1;
+            a -= 1;
             if (IsPrime(a)) break;
         }
+        // представляем в виде суммы побитовых сдвигов 2
         StringBuilder res = new StringBuilder();
         int k = -1;
         while (a > 0)
         {
+            // Если крайний бит равен 1 и это первая итерация, то добавляем 1
             if ((a & 1) == 1 && k==-1) res.Append("2>>1 + ");
+            // если крайний бит равен 1, то добавляем 2 битовый сдвиг на k
             else if ((a&1)==1) res.Append($"2<<{k} + ");
-            a>>= 1;
-            k+=1;
+            a >>= 1;
+            k += 1;
         }
         return res.Remove(res.Length-3,3).ToString();
     }
@@ -170,6 +174,7 @@ public class GCDAlgorithms
     /// <returns>Is this number simple(true) or not (false)</returns>
     public static bool IsPrime(int a)
     {
+        // Начинаем с 2 до корня из a
         for (int i = 2; i < (int)Math.Sqrt(a)+1; i++)
         {
             if (a % i == 0) return false;

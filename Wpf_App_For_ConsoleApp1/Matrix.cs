@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Wpf_App_For_ConsoleApp1
 {
+    /// <summary>
+    /// Класс матрицы
+    /// </summary>
     class Matrix
     {
         /// <summary>
@@ -17,12 +20,6 @@ namespace Wpf_App_For_ConsoleApp1
         /// <exception cref="ArgumentException"></exception>
         public static double[,] Multiply(double[,] x, double[,] y)
         {
-            // Проверяем, что количество столбцов первой матрицы равно количеству строк второй
-            if (x.GetLength(1) != y.GetLength(0))
-            {
-                throw new ArgumentException("Matrices cannot be multiplied: invalid dimensions.");
-            }
-
             // Инициализация результатирующей матрицы с размерами (строки x) x (столбцы y)
             double[,] res = new double[x.GetLength(0), y.GetLength(1)];
 
@@ -33,7 +30,7 @@ namespace Wpf_App_For_ConsoleApp1
                 {
                     for (int k = 0; k < x.GetLength(1); k++) // столбцы матрицы x и строки матрицы y
                     {
-                        res[i, j] += x[i, k] * y[k, j]; // Правильное вычисление произведения
+                        res[i, j] += x[i, k] * y[k, j];
                     }
                 }
             }

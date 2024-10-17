@@ -11,6 +11,12 @@ namespace Wpf_App_For_ConsoleApp1
 {
     class UIHandler
     {
+        /// <summary>
+        /// Создает грид
+        /// </summary>
+        /// <param name="grid">грид</param>
+        /// <param name="columns">кол-во столбцов</param>
+        /// <param name="rows">кол-во строк</param>
         public static void InitializeGrid(Grid grid, int columns, int rows)
         {
             if (grid == null)
@@ -66,31 +72,28 @@ namespace Wpf_App_For_ConsoleApp1
                 }
             }
         }
-
+        /// <summary>
+        /// Создает грид по заданному двумерному массиву(матрице)
+        /// </summary>
+        /// <param name="grid">Грид</param>
+        /// <param name="matrix">двумерный массив</param>
         public static void DisplayResult(Grid grid, double[,] matrix)
         {
-            if (grid == null || matrix == null)
-                throw new ArgumentException("Grid or array is null");
-
             // Очищаем содержимое грида
             grid.Children.Clear();
             grid.ColumnDefinitions.Clear();
             grid.RowDefinitions.Clear();
-
             int rows = matrix.GetLength(0); // Получаем количество строк массива
             int columns = matrix.GetLength(1); // Получаем количество столбцов массива
-
             // Добавляем строки и столбцы в грид
             for (int x = 0; x < columns; x++)
             {
                 grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
             }
-
             for (int y = 0; y < rows; y++)
             {
                 grid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(1, GridUnitType.Star) });
             }
-
             // Заполняем грид значениями из массива
             for (int y = 0; y < rows; y++)
             {
@@ -103,28 +106,28 @@ namespace Wpf_App_For_ConsoleApp1
                         HorizontalAlignment = HorizontalAlignment.Center,
                         TextAlignment = TextAlignment.Center
                     };
-
                     Border border = new Border
                     {
                         BorderThickness = new Thickness(1),
                         BorderBrush = Brushes.Black,
                         Child = textBox
                     };
-
                     // Устанавливаем положение TextBox в гриде
                     border.SetValue(Grid.RowProperty, y);
                     border.SetValue(Grid.ColumnProperty, x);
-
                     // Добавляем элемент в грид
                     grid.Children.Add(border);
                 }
             }
         }
+        /// <summary>
+        /// берет значения из грида и возвращает
+        /// </summary>
+        /// <param name="grid"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
         public static double[,] getValuesFromGrid(Grid grid)
         {
-            if (grid == null || grid.RowDefinitions.Count == 0 || grid.ColumnDefinitions.Count == 0)
-                throw new ArgumentException("Grid is either null or not properly initialized");
-
             int rows = grid.RowDefinitions.Count;
             int columns = grid.ColumnDefinitions.Count;
 
@@ -147,7 +150,6 @@ namespace Wpf_App_For_ConsoleApp1
                     }
                 }
             }
-
             return values;
         }
     }
