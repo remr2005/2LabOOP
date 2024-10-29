@@ -1,9 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static GCDAlgorithms;
 
 namespace Tests
@@ -14,6 +9,7 @@ namespace Tests
         [TestMethod()]
         public void FindGCDEuclidTest1()
         {
+            // тестовый словарь
             var dict = new Dictionary<(int, int), int>()
             {
                 {(0,0), 0},
@@ -23,6 +19,7 @@ namespace Tests
                 {(26,100), 2},
                 {(27,100), 1},
             };
+            // делаем проверку
             foreach (var key in dict.Keys)
             {
                 Assert.AreEqual(FindGCDEuclid(key.Item1, key.Item2), dict[key]);
@@ -31,6 +28,7 @@ namespace Tests
         [TestMethod()]
         public void FindGCDEuclidTest2()
         {
+            // тестовый словарь
             var dict = new Dictionary<List<int>, int>()
             {
                 {new List<int> {2806, 345, 0, 0, 0}, 23},
@@ -43,7 +41,7 @@ namespace Tests
                 {new List<int> {16, 24, 36, 48, 60}, 4},
                 {new List<int> {0, 24, 36, 48, 60}, 12}
             };
-
+            // делаем проверку
             foreach (var key in dict.Keys)
             {
                 Assert.AreEqual(FindGCDEuclid(key.ToArray()), dict[key]);
@@ -52,6 +50,7 @@ namespace Tests
         [TestMethod()]
         public void FindGCDSteinTest()
         {
+            // тестовый словарь
             var dict = new Dictionary<List<int>, int>()
             {
                 {new List<int> {2806, 345, 0, 0, 0}, 23},
@@ -64,6 +63,7 @@ namespace Tests
                 {new List<int> {16, 24, 36, 48, 60}, 4},
                 {new List<int> {0, 24, 36, 48, 60}, 12}
             };
+            // делаем проверку
             foreach (var key in dict.Keys)
             {
                 Assert.AreEqual(FindGCDStein(key.ToArray()), dict[key]);
