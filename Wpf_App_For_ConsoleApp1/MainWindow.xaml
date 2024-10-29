@@ -23,12 +23,12 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
-        <TextBox PreviewTextInput="TxtBox1_PreviewTextInput" Name="TxtBox1" Grid.Column="0" Grid.Row="0" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"/>
-        <TextBox PreviewTextInput="TxtBox1_PreviewTextInput" Name="TxtBox2" Grid.Column="0" Grid.Row="1" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"/>
-        <TextBox PreviewTextInput="TxtBox1_PreviewTextInput" Name="TxtBox3" Grid.Column="0" Grid.Row="2" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"/>
-        <TextBox PreviewTextInput="TxtBox1_PreviewTextInput" Name="TxtBox4" Grid.Column="0" Grid.Row="3" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"/>
-        <TextBox PreviewTextInput="TxtBox1_PreviewTextInput" Name="TxtBox5" Grid.Column="0" Grid.Row="4" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"/>
-        <Button Click="Button_Click_1" Grid.Column="0" Grid.Row="5" Content="Calculate GCD" HorizontalAlignment="Left" Margin="16,0,0,0" VerticalAlignment="Center" />
+        <TextBox PreviewTextInput="TxtBox1_PreviewTextInput" Name="TxtBox1" Grid.Column="0" Grid.Row="0" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+        <TextBox PreviewTextInput="TxtBox1_PreviewTextInput" Name="TxtBox2" Grid.Column="0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+        <TextBox PreviewTextInput="TxtBox1_PreviewTextInput" Name="TxtBox3" Grid.Column="0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+        <TextBox PreviewTextInput="TxtBox1_PreviewTextInput" Name="TxtBox4" Grid.Column="0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+        <TextBox PreviewTextInput="TxtBox1_PreviewTextInput" Name="TxtBox5" Grid.Column="0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+        <Button Click="Button_Click_1" Grid.Column="0" Grid.Row="5" Content="Calculate GCD" HorizontalAlignment="Left" Margin="16,0,0,0" VerticalAlignment="Center" Width="134" />
         <Label Content="Euclid" HorizontalAlignment="Left" Margin="0,10,0,0" Grid.Row="6" VerticalAlignment="Top"/>
         <Label Content="Stein" HorizontalAlignment="Left" Margin="0,10,0,0" Grid.Row="7" VerticalAlignment="Top"/>
         <Label Name="Euclid_Res" Content="" HorizontalAlignment="Left" Margin="56,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="80"/>
@@ -39,10 +39,14 @@
         <Label Name="Euclid_Res2" Grid.Column="1" Content="" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center" Width="120" Margin="40,0,0,0"/>
         <Label Grid.Column="1" Content="Stein" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Center"/>
         <Label Name="Stein_Res2" Grid.Column="1" Content="" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Center" Width="120" Margin="40,0,0,0"/>
-        <TextBox Name="TxtPrimeNumber" PreviewTextInput="TxtBox1_PreviewTextInput" Grid.Column="2" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Margin="0,13,0,0"/>
-        <Button Click="Button_Click_Find_Prime" Grid.Column="2" Content="Calculate Prime" HorizontalAlignment="Center" Margin="0,7,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100"/>
-        <Label Content="Result" HorizontalAlignment="Left" Margin="159,9,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1"/>
-        <Label Name="PrimeLabel" Grid.Column="2" Content="" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Width="399" Margin="71,9,0,0" Grid.ColumnSpan="2"/>
+        <TextBox Name="TxtPrimeNumber" PreviewTextInput="TxtBox1_PreviewTextInput" Grid.Column="3" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Margin="10,13,0,0"/>
+        <Button Click="Button_Click_Find_Prime" Grid.Column="3" Content="Calculate Prime" HorizontalAlignment="Left" Margin="30,7,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100"/>
+        <Label Content="Result" HorizontalAlignment="Left" Margin="159,9,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="2"/>
+        <Label Name="PrimeLabel" Grid.Column="3" Content="" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Width="249" Margin="71,9,0,0"/>
         <Button Click="Button_Click" Grid.Column="3" Content="Matrix" HorizontalAlignment="Left" Margin="180,10,0,0" Grid.Row="7" VerticalAlignment="Top" RenderTransformOrigin="1.388,-0.037"/>
+        <Label Grid.Column="2" Content="Time(tickets):" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center"/>
+        <Label Grid.Column="2" Content="Time(tickets):" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Center"/>
+        <Label Name="Time_Euclid" Grid.Column="2" Content="" HorizontalAlignment="Left" Margin="80,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="70"/>
+        <Label Name="Time_Stein" Grid.Column="2" Content="" HorizontalAlignment="Left" Margin="80,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="70"/>
     </Grid>
 </Window>

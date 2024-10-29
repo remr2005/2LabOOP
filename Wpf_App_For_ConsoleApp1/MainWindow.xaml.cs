@@ -1,8 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using static GCDAlgorithms;
-using Wpf_App_For_ConsoleApp1;
 
 namespace Wpf_App_For_ConsoleApp1
 {
@@ -16,7 +16,7 @@ namespace Wpf_App_For_ConsoleApp1
             InitializeComponent();
         }
         /// <summary>
-        /// Парсит строку возвращая 0 если она пустая
+        /// Парсит строку возвращая 0 если она пустая или содержит только минус
         /// </summary>
         /// <param name="str">строка</param>
         /// <returns>возвращает int</returns>
@@ -70,8 +70,14 @@ namespace Wpf_App_For_ConsoleApp1
                 if (!int.TryParse(arr[i], out param[i])) { Euclid_Res2.Content = Stein_Res2.Content = "Неправильный ввод"; return; }  
             }
             // вычисляем НОД
+            Stopwatch sw_eu = Stopwatch.StartNew();
             Euclid_Res2.Content = FindGCDEuclid(param);
+            sw_eu.Stop();
+            Stopwatch sw_st = Stopwatch.StartNew();
             Stein_Res2.Content = FindGCDStein(param);
+            sw_st.Stop();
+            Time_Stein.Content = sw_st.Elapsed.Ticks;
+            Time_Euclid.Content = sw_eu.Elapsed.Ticks;
         }
         /// <summary>
         /// Кнопка для нахождения наибольшего простого меньшего заданного числа
@@ -84,7 +90,7 @@ namespace Wpf_App_For_ConsoleApp1
             PrimeLabel.Content = FindLargestSimple(ParseToInt(TxtPrimeNumber.Text));
         }
         /// <summary>
-        /// Кнопка для открытия задания с матрицой
+        /// Кнопка для открытия задания с матрицами
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

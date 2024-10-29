@@ -1,5 +1,4 @@
-﻿using System.Text.RegularExpressions;
-using System;
+﻿using System;
 using System.Text;
 /// <summary>
 /// Class for GCD

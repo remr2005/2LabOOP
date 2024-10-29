@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Wpf_App_For_ConsoleApp1
 {
@@ -17,7 +13,6 @@ namespace Wpf_App_For_ConsoleApp1
         /// <param name="x">Первая матрица</param>
         /// <param name="y">Вторая матрица</param>
         /// <returns>Результат</returns>
-        /// <exception cref="ArgumentException"></exception>
         public static double[,] Multiply(double[,] x, double[,] y)
         {
             // Инициализация результатирующей матрицы с размерами (строки x) x (столбцы y)
